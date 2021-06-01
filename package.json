@@ -1,0 +1,77 @@
+{
+  "name": "@smoothjs/validation",
+  "version": "0.1.0",
+  "description": "Validation module for SmoothJS.",
+  "main": "./build/index.js",
+  "types": "./build/index.d.ts",
+  "scripts": {
+    "test": "mocha --require ts-node/register \"./tests/*.spec.ts\" \"./tests/**/*.spec.ts\"",
+    "build": "rimraf build && tsc -p tsconfig.json && copyfiles -u 2 \"src/commands/templates/*\" build/commands/templates",
+    "format": "prettier --write .",
+    "lint": "eslint . --ext=.ts",
+    "commit": "git-cz",
+    "release": "np"
+  },
+  "engines": {
+    "node": ">=10"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "contributors": [
+    "AbdallahMohammed <abdallah.r660@gmail.com>"
+  ],
+  "license": "MIT",
+  "files": [
+    "build/"
+  ],
+  "bugs": {
+    "url": "https://github.com/smoothjs/validation/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/smoothjs/validation"
+  },
+  "homepage": "https://github.com/smoothjs",
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "np": {
+    "contents": ".",
+    "anyBranch": false
+  },
+  "nyc": {
+    "exclude": [
+      "test"
+    ],
+    "extension": [
+      ".ts"
+    ]
+  },
+  "dependencies": {
+    "@smoothjs/cli": "^0.1.8",
+    "@smoothjs/config": "^0.1.2",
+    "@smoothjs/smooth": "^0.1.6",
+    "ajv": "^8.5.0",
+    "class-transformer": "^0.4.0",
+    "class-validator": "^0.13.1"
+  },
+  "devDependencies": {
+    "@types/mocha": "8.2.2",
+    "@types/node": "14.17.1",
+    "@types/require-all": "3.0.2",
+    "copyfiles": "2.4.1",
+    "eslint": "7.27.0",
+    "eslint-config-prettier": "8.3.0",
+    "eslint-plugin-prettier": "3.4.0",
+    "japa": "3.1.1",
+    "mocha": "8.4.0",
+    "np": "7.5.0",
+    "prettier": "2.3.0",
+    "rimraf": "3.0.2",
+    "ts-node": "10.0.0",
+    "typescript": "4.3.2"
+  }
+}
