@@ -11,7 +11,11 @@ export class ValidationException extends BadRequestException {
       if (error instanceof ValidationError) {
         data[error.property] = error.constraints
       } else {
-        data[error.params.missingProperty] = error.message
+        if (typeof error.params.missingProperty !== 'undefined') {
+          data[error.params.missingProperty] = error.message;
+        } else {
+            data[error.instancePath.replace('/', '')] = error.message;
+        }
       }
     })
 
