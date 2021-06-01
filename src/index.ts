@@ -1,5 +1,6 @@
 export * from './exceptions'
 export * from './interfaces'
+export * from './commands'
 
 export * from './utils'
 
