@@ -6,7 +6,7 @@
   "types": "./build/index.d.ts",
   "scripts": {
     "test": "mocha --require ts-node/register \"./tests/*.spec.ts\" \"./tests/**/*.spec.ts\"",
-    "build": "rimraf build && tsc -p tsconfig.json && copyfiles -u 3 \"src/commands/templates/*\" build/commands/templates",
+    "build": "rimraf build && tsc -p tsconfig.json",
     "format": "prettier --write .",
     "lint": "eslint . --ext=.ts",
     "commit": "git-cz",
